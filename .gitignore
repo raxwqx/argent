@@ -1,0 +1,21 @@
+# virtual environments
+.venv/
+venv/
+
+# python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# generated challenges and benchmark output
+corpus/
+bench/corpus/
+bench/results.json
+
+# editor and OS noise
+.DS_Store
+*.swp

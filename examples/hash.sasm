@@ -1,0 +1,28 @@
+# djb2-style accumulator over six bytes: acc = acc * 33 + byte
+start:
+    movi  r1, 0x1000
+    movi  r2, 5381
+    movi  r4, 0
+    movi  r5, 6
+    movi  r10, 33
+loop:
+    cmp   r4, r5
+    je    check
+    add   r6, r1, r4
+    loadb r7, r6, 0
+    mul   r2, r2, r10
+    add   r2, r2, r7
+    movi  r8, 1
+    add   r4, r4, r8
+    jmp   loop
+check:
+    movi  r9, 0x2f4a1c9b
+    cmp   r2, r9
+    jne   fail
+    jmp   win
+fail:
+    movi  r0, 0
+    syscall 1
+win:
+    movi  r0, 1
+    syscall 1
