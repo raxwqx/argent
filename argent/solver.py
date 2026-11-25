@@ -4,7 +4,6 @@ import z3
 
 SAT = z3.sat
 UNSAT = z3.unsat
-UNKNOWN = z3.unknown
 
 
 def check(constraints, timeout_ms=5000):
@@ -28,15 +27,3 @@ def model_bytes(solver, names):
         value = model.eval(expr, model_completion=True).as_long()
         values.append(value & 0xFF)
     return bytes(values)
-
-
-def status_name(status):
-    return str(status)
-
-
-def short(expr, limit=72):
-    """Compact a constraint for reports."""
-    text = str(z3.simplify(expr))
-    if len(text) <= limit:
-        return text
-    return text[: limit - 3] + "..."
