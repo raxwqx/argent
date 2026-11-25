@@ -45,6 +45,8 @@ pipeline — encoder, interpreter, explorer, solver bridge, replay — fits in a
 
 <div align="center"><sub>The stages light up in execution order. The rule at the bottom is the part that makes a result trustworthy.</sub></div>
 
+<div align="center"><sub><a href="https://raxwqx.github.io/argent/">open the interactive version</a> &#183; click a stage to read its module</sub></div>
+
 ---
 
 ## Install

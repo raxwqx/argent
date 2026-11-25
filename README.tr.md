@@ -45,6 +45,8 @@ denetlenebilmesi.
 
 <div align="center"><sub>Aşamalar yürütme sırasına göre yanar. Alttaki kural, sonucu güvenilir yapan kısımdır.</sub></div>
 
+<div align="center"><sub><a href="https://raxwqx.github.io/argent/">interaktif sürümü aç</a> &#183; bir aşamaya tıkla, modülünü oku</sub></div>
+
 ---
 
 ## Kurulum
