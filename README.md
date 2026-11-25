@@ -7,6 +7,7 @@
 **English** &nbsp;·&nbsp; [Türkçe](README.tr.md) &nbsp;·&nbsp; [Русский](README.ru.md)
 
 [![ci](https://img.shields.io/github/actions/workflow/status/raxwqx/argent/ci.yml?branch=master&style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/raxwqx/argent?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/releases)
 [![license](https://img.shields.io/badge/license-MIT-8b949e?style=flat-square&labelColor=0d1117)](LICENSE)
 
 </div>
@@ -66,16 +67,51 @@ pipeline — encoder, interpreter, explorer, solver bridge, replay — fits in a
 
 ---
 
+## Install
+
+Argent is a pure-Python package; there is nothing to compile and no binary to
+download. Python 3.9 or newer, `z3-solver` is pulled in automatically. Linux,
+macOS and Windows all work.
+
+**From the release wheel** (pin the version, no clone needed):
+
+```console
+$ pip install https://github.com/raxwqx/argent/releases/download/v0.1.0/argent_symex-0.1.0-py3-none-any.whl
+$ argent --version
+argent 0.1.0
+```
+
+**From source** (editable, includes the test suite):
+
+```console
+$ git clone https://github.com/raxwqx/argent
+$ cd argent
+$ python -m venv .venv && . .venv/bin/activate
+$ pip install -e ".[dev]"
+```
+
+**Isolated CLI** with pipx, if you do not want it in a project environment:
+
+```console
+$ pipx install git+https://github.com/raxwqx/argent.git
+```
+
+Prefer a tarball? `pip install <path-to>/argent_symex-0.1.0.tar.gz`, or take
+`Code → Download ZIP` from the repository page and run
+`pip install ./argent-master.zip`.
+
+Everything below assumes the `argent` entry point is on `PATH`. Inside a
+checkout without installing, `python -m argent ...` does the same thing.
+
+---
+
 ## Quickstart
 
 ```console
-$ python -m venv .venv && . .venv/bin/activate
-$ pip install -e ".[dev]"
-
-$ python -m argent corpus -o corpus -p 1
+$ argent corpus -o corpus -p 1
 wrote 8 program(s) to corpus
 
-$ python -m argent solve corpus/hash-00.sasm -n 6
+$ argent solve corpus/hash-00.sasm -n 6
 argent 0.1.0
 
   program    corpus/hash-00.sasm
@@ -98,7 +134,7 @@ argent 0.1.0
 Try the same input by hand:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 50b7c0340a6f
+$ argent run corpus/hash-00.sasm --hex 50b7c0340a6f
 halted     yes
 exit code  1
 steps      67
@@ -108,7 +144,7 @@ trace      0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 1
 A wrong input takes the other side of the branch and exits with 0:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 000000000000
+$ argent run corpus/hash-00.sasm --hex 000000000000
 exit code  0
 ```
 
@@ -134,7 +170,7 @@ win:
 ```
 
 ```console
-$ python -m argent solve examples/eq.sasm -n 1
+$ argent solve examples/eq.sasm -n 1
   status     sat
   input      41
   ascii      A

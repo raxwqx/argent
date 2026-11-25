@@ -7,6 +7,7 @@
 [English](README.md) &nbsp;·&nbsp; **Türkçe** &nbsp;·&nbsp; [Русский](README.ru.md)
 
 [![ci](https://img.shields.io/github/actions/workflow/status/raxwqx/argent/ci.yml?branch=master&style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/raxwqx/argent?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/releases)
 [![license](https://img.shields.io/badge/license-MIT-8b949e?style=flat-square&labelColor=0d1117)](LICENSE)
 
 </div>
@@ -66,16 +67,50 @@ denetlenebilmesi.
 
 ---
 
+## Kurulum
+
+Argent saf Python paketi; derlenecek bir şey yok, indirilecek ikili dosya da
+yok. Python 3.9 veya üstü yeterli, `z3-solver` kendiliğinden gelir. Linux,
+macOS ve Windows üzerinde çalışır.
+
+**Sürüm tekerleğinden** (sürümü sabitler, klon gerekmez):
+
+```console
+$ pip install https://github.com/raxwqx/argent/releases/download/v0.1.0/argent_symex-0.1.0-py3-none-any.whl
+$ argent --version
+argent 0.1.0
+```
+
+**Kaynaktan** (düzenlenebilir kurulum, testler dahil):
+
+```console
+$ git clone https://github.com/raxwqx/argent
+$ cd argent
+$ python -m venv .venv && . .venv/bin/activate
+$ pip install -e ".[dev]"
+```
+
+**İzole CLI** istiyorsanız pipx ile:
+
+```console
+$ pipx install git+https://github.com/raxwqx/argent.git
+```
+
+Arşiv tercih ederseniz `pip install <yol>/argent_symex-0.1.0.tar.gz`, ya da
+depo sayfasından `Code -> Download ZIP` alıp `pip install ./argent-master.zip`.
+
+Aşağıdaki komutlar `argent` giriş noktasının `PATH` üzerinde olduğunu varsayar.
+Kurulum yapmadan depo içinde `python -m argent ...` aynı işi görür.
+
+---
+
 ## Hızlı başlangıç
 
 ```console
-$ python -m venv .venv && . .venv/bin/activate
-$ pip install -e ".[dev]"
-
-$ python -m argent corpus -o corpus -p 1
+$ argent corpus -o corpus -p 1
 wrote 8 program(s) to corpus
 
-$ python -m argent solve corpus/hash-00.sasm -n 6
+$ argent solve corpus/hash-00.sasm -n 6
 argent 0.1.0
 
   program    corpus/hash-00.sasm
@@ -98,7 +133,7 @@ argent 0.1.0
 Aynı girdiyle elle deneyin:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 50b7c0340a6f
+$ argent run corpus/hash-00.sasm --hex 50b7c0340a6f
 halted     yes
 exit code  1
 steps      67
@@ -108,7 +143,7 @@ trace      0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 1
 Yanlış bir girdi dalın diğer tarafına gider ve 0 ile çıkar:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 000000000000
+$ argent run corpus/hash-00.sasm --hex 000000000000
 halted     yes
 exit code  0
 steps      66
@@ -137,7 +172,7 @@ win:
 ```
 
 ```console
-$ python -m argent solve examples/eq.sasm -n 1
+$ argent solve examples/eq.sasm -n 1
   status     sat
   input      41
   ascii      A

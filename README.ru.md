@@ -7,6 +7,7 @@
 [English](README.md) &nbsp;·&nbsp; [Türkçe](README.tr.md) &nbsp;·&nbsp; **Русский**
 
 [![ci](https://img.shields.io/github/actions/workflow/status/raxwqx/argent/ci.yml?branch=master&style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/raxwqx/argent?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/releases)
 [![license](https://img.shields.io/badge/license-MIT-8b949e?style=flat-square&labelColor=0d1117)](LICENSE)
 
 </div>
@@ -67,16 +68,51 @@ Argent — символьный исполнитель, написанный с 
 
 ---
 
+## Установка
+
+Argent — чистый Python-пакет: компилировать нечего, бинарников для скачивания
+нет. Достаточно Python 3.9 или новее, `z3-solver` подтянется сам. Работает на
+Linux, macOS и Windows.
+
+**Из колеса релиза** (фиксированная версия, клонирование не нужно):
+
+```console
+$ pip install https://github.com/raxwqx/argent/releases/download/v0.1.0/argent_symex-0.1.0-py3-none-any.whl
+$ argent --version
+argent 0.1.0
+```
+
+**Из исходников** (editable-установка, вместе с тестами):
+
+```console
+$ git clone https://github.com/raxwqx/argent
+$ cd argent
+$ python -m venv .venv && . .venv/bin/activate
+$ pip install -e ".[dev]"
+```
+
+**Изолированный CLI** через pipx:
+
+```console
+$ pipx install git+https://github.com/raxwqx/argent.git
+```
+
+Если нужен архив: `pip install <путь>/argent_symex-0.1.0.tar.gz` либо
+`Code -> Download ZIP` на странице репозитория и
+`pip install ./argent-master.zip`.
+
+Дальше предполагается, что команда `argent` есть в `PATH`. Внутри репозитория
+без установки то же самое делает `python -m argent ...`.
+
+---
+
 ## Быстрый старт
 
 ```console
-$ python -m venv .venv && . .venv/bin/activate
-$ pip install -e ".[dev]"
-
-$ python -m argent corpus -o corpus -p 1
+$ argent corpus -o corpus -p 1
 wrote 8 program(s) to corpus
 
-$ python -m argent solve corpus/hash-00.sasm -n 6
+$ argent solve corpus/hash-00.sasm -n 6
 argent 0.1.0
 
   program    corpus/hash-00.sasm
@@ -99,7 +135,7 @@ argent 0.1.0
 Проверьте тот же вход вручную:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 50b7c0340a6f
+$ argent run corpus/hash-00.sasm --hex 50b7c0340a6f
 halted     yes
 exit code  1
 steps      67
@@ -109,7 +145,7 @@ trace      0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 1
 Неверный вход уходит в другую ветвь и завершается с кодом 0:
 
 ```console
-$ python -m argent run corpus/hash-00.sasm --hex 000000000000
+$ argent run corpus/hash-00.sasm --hex 000000000000
 halted     yes
 exit code  0
 steps      66
@@ -138,7 +174,7 @@ win:
 ```
 
 ```console
-$ python -m argent solve examples/eq.sasm -n 1
+$ argent solve examples/eq.sasm -n 1
   status     sat
   input      41
   ascii      A
