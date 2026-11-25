@@ -39,31 +39,11 @@ The point is not to compete with angr. The point is that the entire analysis
 pipeline — encoder, interpreter, explorer, solver bridge, replay — fits in about
 1,600 lines, and you can audit all of it.
 
-```
-  .sasm source
-      │
-      ▼
-  ┌───────────┐    8-byte instructions     ┌──────────────┐
-  │ assembler │ ─────────────────────────▶ │  interpreter │
-  └───────────┘                            └──────┬───────┘
-                                                  │ symbolic state
-                                                  ▼
-                                          ┌──────────────┐
-                                          │   explorer   │
-                                          │  fork/prune  │
-                                          └──────┬───────┘
-                                                 │ path constraints
-                                                 ▼
-                                          ┌──────────────┐
-                                          │     z3       │
-                                          └──────┬───────┘
-                                                 │ candidate input
-                                                 ▼
-                                          ┌──────────────┐
-                                          │   replay     │  ← the part that
-                                          │  (concrete)  │    makes it honest
-                                          └──────────────┘
-```
+<div align="center">
+  <img src="assets/pipeline.svg" alt="Animated pipeline: assembler, interpreter, explorer, z3 solver, concrete replay" width="780">
+</div>
+
+<div align="center"><sub>The stages light up in execution order. The rule at the bottom is the part that makes a result trustworthy.</sub></div>
 
 ---
 
@@ -276,7 +256,8 @@ argent/
   cli.py        solve / run / disasm / corpus / bench
 examples/       two hand-written programs
 tests/          84 tests: encoding, assembler, machine, engine, CLI, corpus
-tools/          asset generator (GIF, MP4, SVG) driven by real CLI output
+tools/          asset generator (GIF, MP4, animated SVG) from real CLI output
+assets/         banner, animated pipeline, terminal recording
 docs/           design notes
 bench/run.py    benchmark entry point
 ```

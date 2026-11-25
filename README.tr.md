@@ -39,31 +39,11 @@ Amaç angr ile yarışmak değil. Amaç, kodlama, yorumlayıcı, keşif, çözü
 ve tekrar oynatma dahil tüm hattın yaklaşık 1.600 satırda kalması ve tamamının
 denetlenebilmesi.
 
-```
-  .sasm kaynağı
-      │
-      ▼
-  ┌───────────┐    8 baytlık komutlar     ┌──────────────┐
-  │ derleyici │ ────────────────────────▶ │  yorumlayıcı │
-  └───────────┘                           └──────┬───────┘
-                                                 │ sembolik durum
-                                                 ▼
-                                         ┌──────────────┐
-                                         │   keşfedici  │
-                                         │ çatal / buda │
-                                         └──────┬───────┘
-                                                │ yol kısıtları
-                                                ▼
-                                         ┌──────────────┐
-                                         │     z3       │
-                                         └──────┬───────┘
-                                                │ aday girdi
-                                                ▼
-                                         ┌──────────────┐
-                                         │   tekrar     │  ← dürüstlüğü
-                                         │  oynatma     │    sağlayan adım
-                                         └──────────────┘
-```
+<div align="center">
+  <img src="assets/pipeline.svg" alt="Hareketli hat: derleyici, yorumlayıcı, keşfedici, z3 çözücü, somut tekrar oynatma" width="780">
+</div>
+
+<div align="center"><sub>Aşamalar yürütme sırasına göre yanar. Alttaki kural, sonucu güvenilir yapan kısımdır.</sub></div>
 
 ---
 
@@ -278,7 +258,8 @@ argent/
   cli.py        solve / run / disasm / corpus / bench
 examples/       elle yazılmış iki program
 tests/          84 test: kodlama, derleyici, makine, motor, CLI, korpus
-tools/          varlık üreteci (GIF, MP4, SVG), gerçek CLI çıktısından
+tools/          varlık üreteci (GIF, MP4, hareketli SVG), gerçek CLI çıktısından
+assets/         banner, hareketli hat, terminal kaydı
 docs/           tasarım notları
 bench/run.py    kıyaslama giriş noktası
 ```

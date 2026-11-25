@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="704" viewBox="0 0 780 704" role="img" aria-label="Pipeline: assembler, interpreter, explorer, solver, concrete replay">
+  <defs>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6e7681"/>
+      <stop offset="0.5" stop-color="#c9d1d9"/>
+      <stop offset="1" stop-color="#6e7681"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30363d"/>
+      <stop offset="0.5" stop-color="#8b949e"/>
+      <stop offset="1" stop-color="#30363d"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#141a21" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="780" height="704" fill="#0d1117"/>
+  <rect width="780" height="704" fill="url(#grid)"/>
+  <text x="120" y="44" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="15" letter-spacing="8" fill="#6e7681">PIPELINE</text>
+  <text x="764" y="44" text-anchor="end" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#484f58">one path, five stages</text>
+  <path d="M158 62 V84" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 62 V84" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 83 L158 88 L162 83" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 156 V188" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 156 V188" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 187 L158 192 L162 187" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 260 V292" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 260 V292" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 291 L158 296 L162 291" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 364 V396" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 364 V396" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 395 L158 400 L162 395" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 468 V500" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 468 V500" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 499 L158 504 L162 499" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 572 V588" stroke="#30363d" stroke-width="1.5" fill="none"/>
+  <path d="M158 572 V588" stroke="#c9d1d9" opacity="0.75" stroke-width="1.5" stroke-dasharray="3 6" fill="none">    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.1s" repeatCount="indefinite"/>  </path>
+  <path d="M154 587 L158 592 L162 587" stroke="#8b949e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="174" y="66" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">source .sasm</text>
+  <text x="174" y="172.0" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">8-byte instructions</text>
+  <text x="174" y="276.0" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">symbolic state</text>
+  <text x="174" y="380.0" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">path constraints</text>
+  <text x="174" y="484.0" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">candidate input</text>
+  <text x="174" y="586" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#6e7681">exit code and trace</text>
+  <rect x="120" y="88" width="340" height="64" rx="9" fill="#11161d" stroke="#30363d" stroke-width="1.2"/>
+  <text x="290" y="116.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="17" font-weight="700" letter-spacing="2.5" fill="#c9d1d9">ASSEMBLER</text>
+  <text x="290" y="138.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" fill="#6e7681">argent/asm.py  &#183;  labels to indices</text>
+  <rect x="120" y="88" width="340" height="64" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity="0">    <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.10;0.17;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+  <rect x="120" y="192" width="340" height="64" rx="9" fill="#11161d" stroke="#30363d" stroke-width="1.2"/>
+  <text x="290" y="220.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="17" font-weight="700" letter-spacing="2.5" fill="#c9d1d9">INTERPRETER</text>
+  <text x="290" y="242.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" fill="#6e7681">argent/machine.py  &#183;  z3 bit-vectors</text>
+  <rect x="120" y="192" width="340" height="64" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity="0">    <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.30;0.37;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+  <rect x="120" y="296" width="340" height="64" rx="9" fill="#11161d" stroke="#30363d" stroke-width="1.2"/>
+  <text x="290" y="324.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="17" font-weight="700" letter-spacing="2.5" fill="#c9d1d9">EXPLORER</text>
+  <text x="290" y="346.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" fill="#6e7681">argent/engine.py  &#183;  fork, prune, budget</text>
+  <rect x="120" y="296" width="340" height="64" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity="0">    <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.50;0.57;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+  <rect x="120" y="400" width="340" height="64" rx="9" fill="#11161d" stroke="#30363d" stroke-width="1.2"/>
+  <text x="290" y="428.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="17" font-weight="700" letter-spacing="2.5" fill="#c9d1d9">SOLVER</text>
+  <text x="290" y="450.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" fill="#6e7681">argent/solver.py  &#183;  z3 sat, model</text>
+  <rect x="120" y="400" width="340" height="64" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity="0">    <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.70;0.77;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+  <rect x="120" y="504" width="340" height="64" rx="9" fill="#11161d" stroke="#30363d" stroke-width="1.2"/>
+  <text x="290" y="532.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="17" font-weight="700" letter-spacing="2.5" fill="#c9d1d9">REPLAY</text>
+  <text x="290" y="554.0" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" fill="#6e7681">argent/engine.py  &#183;  concrete, no trust</text>
+  <rect x="120" y="504" width="340" height="64" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.6" opacity="0">    <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.90;0.97;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+  <g>    <rect x="-5" y="-5" width="10" height="10" rx="1.5" fill="#e6edf3" transform="rotate(45)"/>    <animateMotion path="M158 62 V600" dur="15s" keyPoints="0;0.1078;0.1078;0.3011;0.3011;0.4944;0.4944;0.6877;0.6877;0.8810;0.8810;1" keyTimes="0;0.10;0.16;0.30;0.36;0.50;0.56;0.70;0.76;0.90;0.96;1" calcMode="linear" repeatCount="indefinite"/>  </g>
+  <rect x="120" y="612" width="520" height="52" rx="9" fill="#11161d" stroke="#21262d"/>  <text x="380" y="636" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="12" letter-spacing="1" fill="#6e7681">ACCEPTANCE RULE</text>  <text x="380" y="654" text-anchor="middle" font-family="Fira Code, DejaVu Sans Mono, monospace" font-size="13" fill="#c9d1d9">an input is reported only if replay reaches the goal</text>  <rect x="120" y="612" width="520" height="52" rx="9" fill="none" stroke="#e6edf3" stroke-width="1.4" opacity="0">    <animate attributeName="opacity" values="0;0.7;0;0" keyTimes="0;0.96;0.995;1" calcMode="discrete" dur="15s" repeatCount="indefinite"/>  </rect>
+</svg>
