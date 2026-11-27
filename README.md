@@ -9,6 +9,7 @@
 [![ci](https://img.shields.io/github/actions/workflow/status/raxwqx/argent/ci.yml?branch=master&style=flat-square&label=ci&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/actions/workflows/ci.yml)
 [![release](https://img.shields.io/github/v/release/raxwqx/argent?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/releases)
 [![license](https://img.shields.io/badge/license-MIT-8b949e?style=flat-square&labelColor=0d1117)](LICENSE)
+[![discussions](https://img.shields.io/badge/discussions-Q%26A-8b949e?style=flat-square&labelColor=0d1117)](https://github.com/raxwqx/argent/discussions)
 
 </div>
 
@@ -263,6 +264,14 @@ assets/         banner, animated pipeline, terminal recording
 docs/           design notes
 bench/run.py    benchmark entry point
 ```
+
+---
+
+## Questions
+
+Ask about the engine, a program that behaves oddly, or an idea for the ISA in
+[Discussions](https://github.com/raxwqx/argent/discussions). Use the **Q&A**
+category so the answer can be marked and found later.
 
 ---
 
