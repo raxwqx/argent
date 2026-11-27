@@ -9,6 +9,7 @@
 [![ci](https://img.shields.io/github/actions/workflow/status/raxwqx/argent/ci.yml?branch=master&style=flat-square&label=ci&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/actions/workflows/ci.yml)
 [![release](https://img.shields.io/github/v/release/raxwqx/argent?style=flat-square&labelColor=0d1117&color=8b949e)](https://github.com/raxwqx/argent/releases)
 [![license](https://img.shields.io/badge/license-MIT-8b949e?style=flat-square&labelColor=0d1117)](LICENSE)
+[![discussions](https://img.shields.io/badge/discussions-Q%26A-8b949e?style=flat-square&labelColor=0d1117)](https://github.com/raxwqx/argent/discussions)
 
 </div>
 
@@ -265,6 +266,14 @@ assets/         banner, hareketli hat, terminal kaydı
 docs/           tasarım notları
 bench/run.py    kıyaslama giriş noktası
 ```
+
+---
+
+## Sorular
+
+Motor, tuhaf davranan bir program veya ISA için bir fikir hakkında
+[Discussions](https://github.com/raxwqx/argent/discussions) üzerinden sorabilirsin.
+Cevabın işaretlenip sonradan bulunabilmesi için **Q&A** kategorisini kullan.
 
 ---
 
